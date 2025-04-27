@@ -46,6 +46,8 @@ lib.maskContentElement {
         5 = EXT:bootstrap_package/Resources/Private/Layouts/ContentElements
     }
 }
+plugin.tx_form.settings.yamlConfigurations.100 = EXT:greenmeals/Configuration/Form/Setup.yaml
+module.tx_form.settings.yamlConfigurations.100 = EXT:greenmeals/Configuration/Form/Setup.yaml
 
 plugin.tx_news {
     settings {

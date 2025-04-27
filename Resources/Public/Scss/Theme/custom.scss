@@ -99,3 +99,61 @@
   margin-top: 1rem;
 }
 
+/* Mask Element Rezept */
+
+.mask-recipe-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-bottom: 2rem;
+
+  .mask-recipe-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .mask-recipe-content {
+    padding: 2rem;
+  }
+
+  .mask-recipe-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .mask-recipe-meta {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #6c757d;
+  }
+
+  .mask-recipe-ingredients {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mask-recipe-instructions {
+    margin-bottom: 1.5rem;
+  }
+
+  .mask-recipe-tags {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .mask-recipe-tag {
+      background: #e0f7e9;
+      color: #006644;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+  }
+}
+
