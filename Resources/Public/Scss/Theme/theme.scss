@@ -1,0 +1,28 @@
+//
+// Variables
+//
+@import "variables";
+
+//
+// Import needed Bootstrap Package Files
+//
+@import "EXT:bootstrap_package/Resources/Public/Scss/bootstrap5/theme";
+
+
+// Import custom scss files
+@import "custom";
+
+// pagination
+.pagination-container {
+  display: flex;
+  justify-content: center;
+}
+
+.f3-widget-paginatior {
+  display: flex;
+  list-style: none;
+}
+
+.f3-widget-paginatior li {
+  margin: 0 10px;
+}

@@ -1,0 +1,76 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:greenmeals/Resources/Public/Images/greenmeals.png
+        fileInverted = EXT:greenmeals/Resources/Public/Images/greenmeals.png
+        height = 117
+        width = 432
+        alt = GreenMeals
+        linktitle = GreenMeals
+    }
+    favicon {
+        file = EXT:greenmeals/Resources/Public/Icons/greenmeals.png
+    }
+    fluidtemplate {
+        layoutRootPath = EXT:greenmeals/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:greenmeals/Resources/Private/Partials/Page/
+        templateRootPath = EXT:greenmeals/Resources/Private/Templates/Page/
+    }
+}
+
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    view {
+        layoutRootPath = EXT:greenmeals/Resources/Private/Layouts/
+        partialRootPath = EXT:greenmeals/Resources/Private/Partials/
+        templateRootPath = EXT:greenmeals/Resources/Private/Templates/
+    }
+}
+
+
+########################
+### CONTENT ELEMENTS ###
+########################
+plugin.bootstrap_package_contentelements {
+    view {
+        layoutRootPath = EXT:greenmeals/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:greenmeals/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:greenmeals/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+################################
+### BOOTSTRAP SCSS CONSTANTS ###
+################################
+plugin.bootstrap_package.settings.scss {
+    primary = #aca67f
+    secondary = #daa739
+}
+
+
+page.theme.footernavigation {
+    navigationType = Directory
+    navigationValue = 27
+    enable = 1
+}
+
+
+# Login Formular
+plugin.tx_felogin_login.view.templateRootPath = EXT:greenmeals/Resources/Private/Templates/
+
+# News
+plugin.tx_news.view.twb5.templateRootPath = EXT:greenmeals/Resources/Private/Templates/
+plugin.tx_news.view.twb5.partialRootPath = EXT:greenmeals/Resources/Private/Partials/
+plugin.tx_news.view.twb5.layoutRootPath = EXT:greenmeals/Resources/Private/Layouts/

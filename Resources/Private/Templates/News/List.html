@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+    <f:if condition="{news}">
+        <f:then>
+            <div class="news-list-view" id="news-container-{contentObjectData.uid}">
+                <div class="row g-4">
+                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card news-card h-100">
+                                <f:if condition="{newsItem.mediaPreviews}">
+                                    <f:then>
+                                        <f:for each="{newsItem.mediaPreviews}" as="previewImage" iteration="mediaIterator">
+                                            <f:if condition="{mediaIterator.isFirst}">
+                                                <f:media file="{previewImage}" class="card-img-top" alt="{newsItem.title}" />
+                                            </f:if>
+                                        </f:for>
+                                    </f:then>
+                                </f:if>
+                                <div class="card-body">
+                                    <h5 class="card-title">{newsItem.title}</h5>
+                                    <p class="card-text">
+                                        <f:format.crop maxCharacters="120" respectWordBoundaries="true">
+                                            {newsItem.teaser}
+                                        </f:format.crop>
+                                    </p>
+                                    <n:link newsItem="{newsItem}" settings="{settings}" class="btn btn-primary mt-auto">
+                                        Zum Rezept &rarr;
+                                    </n:link>
+                                </div>
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+
+                <f:if condition="{settings.list.paginate.insertBelow}">
+                    <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                </f:if>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="alert alert-warning">
+                <f:translate key="list_nonewsfound" />
+            </div>
+        </f:else>
+    </f:if>
+</f:section>
+
+</html>

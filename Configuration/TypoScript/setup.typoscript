@@ -1,0 +1,76 @@
+######################
+#### DEPENDENCIES ####
+######################
+@import 'EXT:mask/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:news/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:news/Configuration/TypoScript/Styles/Twb5/setup.typoscript'
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
+
+
+##############
+#### PAGE ####
+##############
+page.config.contentObjectExceptionHandler = 0
+
+page {
+    includeCSS {
+        theme = EXT:greenmeals/Resources/Public/Scss/Theme/theme.scss
+        custom = EXT:greenmeals/Resources/Public/Scss/Theme/custom.scss
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {
+        greenmeals_scripts = EXT:greenmeals/Resources/Public/JavaScript/Dist/scripts.js
+    }
+}
+
+lib.maskContentElement {
+    templateRootPaths {
+        5 = EXT:bootstrap_package/Resources/Private/Templates/ContentElements
+    }
+    partialRootPaths {
+        5 = EXT:bootstrap_package/Resources/Private/Partials/ContentElements
+    }
+    layoutRootPaths {
+        5 = EXT:bootstrap_package/Resources/Private/Layouts/ContentElements
+    }
+}
+
+plugin.tx_news {
+    settings {
+        #displayDummyIfNoMedia = 1
+        cropMaxCharacters = 200
+        list {
+            paginate {
+                itemsPerPage = 3
+                insertAbove = false
+                insertBelow = true
+            }
+
+            media {
+                image {
+                    maxWidth = 249
+                    maxHeight = 191
+                }
+            }
+        }
+    }
+    _LOCAL_LANG {
+        de {
+            more-link = zum Rezept
+            back-link = Zurück zur Liste
+            dateFormat = %d.%m.%Y
+        }
+    }
+}
